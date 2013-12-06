@@ -1,17 +1,5 @@
 <% if user_signed_in? %>
   <li>
-    <%= link_to "Entrada", new_graos_preco_path %>
-  </li>
-  <li>
-    <%= link_to "Preços", graos_precos_path %>
-  </li>
-  <li>
-    <%= link_to "Cáculos", pages_calculos_path %>
-  </li>
-  <li>
-    <%= link_to "Relatórios", pages_relatorios_path %>
-  </li>
-  <li>
-    <%= link_to "Log out (#{current_user.login})", destroy_user_session_path, method: :delete %>
+    <%= link_to "Log out (#{current_user.email})", destroy_user_session_path, method: :delete %>
   </li>
 <% end %>
