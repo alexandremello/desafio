@@ -1,13 +1,19 @@
 class CategoriesController < ApplicationController
 	respond_to :html
-	before_action :set_category, only: [:destroy]
+	before_action :set_category, only: [:destroy, :edit, :update, :show]
 
 	def index
 		@categories = Category.all
 	end
 
+	def show
+	end
+
 	def new
 		@category = Category.new
+	end
+
+	def edit
 	end
 
 	def create
@@ -17,6 +23,14 @@ class CategoriesController < ApplicationController
 			redirect_to action: 'index', notice: 'Categoria criada com sucesso'
 		else
 			render action: 'new'
+		end
+	end
+
+	def update
+		if @category.update(category_params)
+			redirect_to action: 'index', notice: 'Categoria atualizada com sucesso'
+		else
+			render action: 'edit'
 		end
 	end
 
