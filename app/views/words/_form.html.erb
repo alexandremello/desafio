@@ -1,0 +1,9 @@
+<%= form_for [@category, Word.new], html: { class: "form-inline" } do |f| %>
+	<div class="form-group">
+		<%= f.text_field :word, placeholder: "nova palavra", class: "form-control" %>
+	</div>
+
+	<div class="form-group actions">
+		<%= f.submit "Adicionar", class: "btn btn-default" %>
+	</div>
+<% end %>

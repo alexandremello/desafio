@@ -18,4 +18,16 @@ describe Category do
 			end
 		end
 	end
+
+	context 'should respond to' do
+		let(:c) { FactoryGirl.create(:category) }
+
+		it 'image' do
+			c.should respond_to :image
+		end
+
+		it 'words' do
+			c.should respond_to :words
+		end
+	end
 end

@@ -1,0 +1,8 @@
+<%= div_for word, class: "row" do %>
+	<div class="col-md-8">
+		<%= word.word %>
+	</div>
+	<div class="col-md-1">
+		<%= link_to "Excluir", category_word_path(@category, word), method: :delete, class: "" %>
+	</div>
+<% end %>

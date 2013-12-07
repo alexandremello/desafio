@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # autenticacao
 gem 'devise'
 
+# upload
+gem "paperclip", "~> 3.0"
+
 group :development, :test do
   gem 'libnotify'
   gem 'factory_girl_rails'

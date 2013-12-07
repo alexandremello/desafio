@@ -1,8 +1,9 @@
 <%= div_for category, class: "row" do %>
-	<div class="col-md-5 col-md-offset-2">
+	<div class="col-md-2 col-md-offset-2 text-center">
+		<%= image_tag category.image.url(:xsmall) %>
 		<%= link_to "#{category.description}", category %>
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-2">
 		<div class="btn-group">
 			<%= link_to "Editar", edit_category_path(category), class: "btn btn-primary btn-sm" %>
 			<%= link_to "Excluir", category, method: :delete, data: { confirm: "Deseja excluir #{category.description}?" }, class: "btn btn-danger btn-sm" %>
