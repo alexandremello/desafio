@@ -11,5 +11,11 @@ describe Category do
 				FactoryGirl.build(:category, description: nil).should_not be_valid
 			end
 		end
+		context 'uniqueness of' do
+			it 'description' do
+				c = FactoryGirl.create(:category)
+				FactoryGirl.build(:category, description: c.description).should_not be_valid
+			end
+		end
 	end
 end

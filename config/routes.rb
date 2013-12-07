@@ -1,9 +1,8 @@
 Desafio::Application.routes.draw do
+	root :to => 'categories#index'
 
 	resources :categories
 
-  devise_for :users do
-	root :to => "devise/sessions#new"
-  end
+	devise_for :users
 
 end
