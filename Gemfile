@@ -30,6 +30,21 @@ gem 'jbuilder', '~> 1.2'
 # autenticacao
 gem 'devise'
 
+group :development, :test do
+  gem 'libnotify'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
+group :development do
+  gem 'guard-rspec', require: false
+end
+
+group :test do
+	gem 'database_cleaner'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
