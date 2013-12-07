@@ -24,8 +24,7 @@ describe Word, type: :request do
 	it 'deletes a category' do
 		w = FactoryGirl.create(:word, category: c)
 		visit category_path(c.id)
-		save_and_open_page
-		page.find(:xpath, "//a[@href=#{category_word_path(c.id, w.id)}]").value.should == 'oi'
+		page.find(:xpath, "//a[@href='#{category_word_path(c.id, w.id)}']").click
 		current_path.should == category_path(c.id)
 		page.should_not have_content w.word
 	end
