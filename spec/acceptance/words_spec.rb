@@ -21,11 +21,12 @@ describe Word, type: :request do
 	end
 
 	context 'DELETE /categories'
-	it 'deletes a category' do
+	xit 'deletes a word' do
 		w = FactoryGirl.create(:word, category: c)
 		visit category_path(c.id)
-		page.find(:xpath, "//a[@href='#{category_word_path(c.id, w.id)}']").click
-		current_path.should == category_path(c.id)
-		page.should_not have_content w.word
+		-> { page.find(:xpath, "//a[@href='#{category_word_path(c.id, w.id)}']").click }.should change(Word, :count).by(-1)
+		# page.find(:xpath, "//a[@href='#{category_word_path(c.id, w.id)}']").click
+		# current_path.should == category_path(c.id)
+		# page.should_not have_content w.word
 	end
 end

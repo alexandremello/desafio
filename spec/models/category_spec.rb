@@ -30,4 +30,11 @@ describe Category do
 			c.should respond_to :words
 		end
 	end
+
+	it 'should destroy words on delete' do
+		category = FactoryGirl.create(:category_with_words)
+		category_id = category.id
+		category.destroy
+		Word.where(category_id: category_id).count.should equal(0)
+	end
 end
