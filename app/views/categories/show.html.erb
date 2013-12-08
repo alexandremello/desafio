@@ -11,6 +11,20 @@
 </div>
 
 <div class="row">
+	<div class="col-md-3 col-md-offset-2">
+		<h4>Palavras</h4>
+		<%= render @category.words %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<%= render 'words/form' %>
+	</div>
+</div>
+
+
+<div class="row">
 	<div class="col-md-2 col-md-offset-2">
 		<%= link_to 'Exibir todas', categories_path, class: "btn btn-primary" %>
 	</div>
