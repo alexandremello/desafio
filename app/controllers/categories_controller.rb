@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-	respond_to :html
+	respond_to :html, :js
 	before_action :set_category, only: [:destroy, :edit, :update, :show]
 
 	def index
@@ -36,7 +36,7 @@ class CategoriesController < ApplicationController
 
 	def destroy
 		@category.destroy
-		redirect_to action: 'index', notice: 'Categoria apagada com sucesso'
+		#redirect_to action: 'index', notice: 'Categoria apagada com sucesso'
 	end
 
 	private

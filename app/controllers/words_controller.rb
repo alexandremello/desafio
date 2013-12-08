@@ -1,5 +1,5 @@
 class WordsController < ApplicationController
-	respond_to :html
+	respond_to :html, :js
 	before_action :set_category, only: [:create, :destroy]
 
 	def index
@@ -8,17 +8,18 @@ class WordsController < ApplicationController
 
 	def create
 		@word = @category.words.new word_params
+		@word.save
 		if @word.save
 			redirect_to @category, notice: 'Palavra salva com sucesso'
 		else
 			render @category
 		end
-	end	
+	end
 
 	def destroy
 		@word = Word.find(params[:id])
 		@word.destroy
-		redirect_to @category
+		#redirect_to @category
 	end
 
 	private

@@ -6,7 +6,7 @@
 	<div class="col-md-2">
 		<div class="btn-group">
 			<%= link_to "Editar", edit_category_path(category), class: "btn btn-primary btn-sm" %>
-			<%= link_to "Excluir", category, method: :delete, data: { confirm: "Deseja excluir #{category.description}?" }, class: "btn btn-danger btn-sm" %>
+			<%= link_to "Excluir", category, method: :delete, remote: true,  data: { confirm: "Deseja excluir #{category.description}?" }, class: "btn btn-danger btn-sm" %>
 		</div>
 	</div>
 <% end %>
