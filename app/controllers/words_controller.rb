@@ -12,7 +12,7 @@ class WordsController < ApplicationController
 		if @word.save
 			redirect_to @category, notice: 'Palavra salva com sucesso'
 		else
-			render @category
+			redirect_to @category, alert: 'Palavra não pode ser nulo'
 		end
 	end
 
