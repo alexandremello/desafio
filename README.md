@@ -8,3 +8,5 @@ Utiliza a gem paperclip para fazer upload das imagens. Essa gem necessita do pac
 Testes automatizados com Rspec e Capybara, e controle de usuários com Devise.
 
 Exclusão de categorias e palavras utilizando ajax (remote: true).
+
+Utilizado PostgreSQL como banco de dados.
