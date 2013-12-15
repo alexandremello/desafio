@@ -1,9 +1,10 @@
 class CategoriesController < ApplicationController
-	respond_to :html, :js
+	respond_to :html, :js, :json
 	before_action :set_category, only: [:destroy, :edit, :update, :show]
 
 	def index
 		@categories = Category.all
+		respond_with @categories
 	end
 
 	def show
