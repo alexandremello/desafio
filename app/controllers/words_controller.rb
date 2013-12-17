@@ -1,9 +1,10 @@
 class WordsController < ApplicationController
-	respond_to :html, :js
+	respond_to :html, :js, :json
 	before_action :set_category, only: [:create, :destroy]
 
 	def index
 		@words = Word.where(category_id: params[:category_id])
+		respond_with @words
 	end
 
 	def create
@@ -19,7 +20,6 @@ class WordsController < ApplicationController
 	def destroy
 		@word = Word.find(params[:id])
 		@word.destroy
-		#redirect_to @category
 	end
 
 	private
