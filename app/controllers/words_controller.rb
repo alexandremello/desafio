@@ -1,7 +1,8 @@
 class WordsController < ApplicationController
 	respond_to :html, :js, :json
 	before_action :set_category, only: [:create, :destroy]
-
+	protect_from_forgery except: :create
+	
 	def index
 		@words = Word.where(category_id: params[:category_id])
 		respond_with @words
@@ -9,7 +10,6 @@ class WordsController < ApplicationController
 
 	def create
 		@word = @category.words.new word_params
-		@word.save
 		if @word.save
 			redirect_to @category, notice: 'Palavra salva com sucesso'
 		else
